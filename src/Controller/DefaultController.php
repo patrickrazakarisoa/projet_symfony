@@ -12,24 +12,6 @@ use App\Entity\Product;
 
 class DefaultController extends AbstractController
 {
-    public function index()
-    {
-        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
-        return $this->render('parent.html.twig', [
-            'products' => $products
-        ]);
-    }
-
-    /**
-     * @Route("/enfant/{id}", name="page_enfant")
-     */
-    public function enfant($id)
-    {
-        $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
-        return $this->render('enfant.html.twig', [
-            'product' => $product
-        ]);
-    }
 
     public function bonjour($nom, $age)
     {
