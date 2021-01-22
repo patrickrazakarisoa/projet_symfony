@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="my_project/public/assets/css/acceuil.css" rel="stylesheet">
+        {% block stylesheets %}  
+        <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: content-box;
+            overflow: hidden;
+        }
+
+        h1, h2 {
+            padding: 20px;
+            background-color: steelblue;
+            width: 30%;
+            margin: auto;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        p {
+            padding: 5px 50px;
+            width: 30%;
+            margin: auto;
+            border-radius: 10px;
+        }
+        </style>    
+         
+        {% endblock %}
+
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+
+        {# inspecter une variable #}
+        <p>{{ dump(menu)}} </p>
+        <p>{{ dump(users)}} </p>
+
+
+        {# Afficher une variable et utiliser les filtres #}    
+        <h1> Bienvenue {{ prenom|capitalize }} {{ nom|upper }}</h1>
+
+        {# Condition IF ELSE #}
+        {% if age >= 18 %}
+            <p> {{ prenom }} est majeur</p>
+        {% else %}
+            <p> {{ prenom }} est mineur</p>
+        {% endif %}
+
+        <p>Vous avez pris comme entrée : {{ menu.entree }}</p>
+        <p>Vous avez pris comme plat principale : {{ menu.plat }}</p>
+        <p>Vous avez pris comme dessert : {{ menu.dessert }}</p>
+
+        
+
+        {# Boucle FOR #}    
+            <h2>Les utilisateurs</h2>
+            {% for user in users %}
+                <p> Nom : {{ user.name }} - Age : {{ user.age }}</p>
+            {% endfor %}
+
+        {% endblock %}
+    </body>
+</html>

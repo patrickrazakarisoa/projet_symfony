@@ -1,0 +1,15 @@
+{% extends 'parent.html.twig' %}
+{% block stylesheet %}{% endblock %}
+{% block body %}
+<h1>Ici la page Enfant</h1>
+<p>Contenu principal</p>
+<div style="border: 1px solid black; width: 30%; margin: auto; padding: 10px;">            
+    <span>id: {{product.id}} </span><br>
+    <span>name: {{product.name}} </span><br>
+    <span>price: {{product.price}} </span><br>
+    <span>description: {{product.description}} </span><br>
+    <span>marque: {{product.marque}} </span>
+</div>
+{% endblock %}
+{% block javascripts %}{% endblock %}
+

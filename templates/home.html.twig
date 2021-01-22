@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}{% endblock %}
+
+		{% block javascripts %}{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+			<ul>
+				<li>Nom :
+					{{ nom }}</li>
+				<li>Prénom :
+					{{ prenom }}</li>
+				<li>Age :
+					{{ age }}</li>
+
+			</ul>
+		{% endblock %}
+	</body>
+</html>

@@ -1,3 +1,29 @@
 index:
     path: /
     controller: App\Controller\DefaultController::index
+
+message:
+    path: /bonjour/{nom}/{age}
+    controller: App\Controller\DefaultController::bonjour
+    requirements:
+        age: '\d+'
+
+message2:
+    path: /bonjour/{nom}/{ville}
+    controller: App\Controller\DefaultController::bonjour2
+
+home:
+    path: /home
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: index
+        permanent: true
+
+config:
+    path: /config
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: 'default/config.html.twig'
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<style>
+				h1 {
+					padding: 20px;
+					background-color: steelblue;
+					color: white;
+					border-radius: 10px;
+					text-align: center;
+					box-shadow: 5px 5px 5px grey;
+					width: 50%;
+					margin: 2rem auto auto;
+				}
+
+				h1:hover {
+					padding: 20px;
+					background-color: rgba(0, 0, 255, 0.5);
+					color: white;
+					border-radius: 10px;
+					text-align: center;
+					box-shadow: 5px 5px 5px grey;
+					width: 50%;
+					margin: 2rem auto auto;
+				}
+			</style>
+		{% endblock %}
+
+		{% block javascripts %}{% endblock %}
+
+	</head>
+	<body>
+		{% block body %}
+			<h1>Bonjour je suis une template !!</h1>
+		{% endblock %}
+	</body>
+</html>
